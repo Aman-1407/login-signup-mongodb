@@ -1,0 +1,27 @@
+{
+  "name": "login-signup-mongodb",
+  "version": "1.0.0",
+  "description": "Node.js + MongoDB: JWT Authentication & Authorization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amandeep",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "chalk": "^4.1.2",
+    "connect-redis": "^6.1.3",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.3",
+    "nconf": "^0.12.0",
+    "redis": "^4.5.1"
+  }
+}
