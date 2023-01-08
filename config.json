@@ -1,6 +1,6 @@
 {
   "mongodbURL": "mongodb+srv://mongodb:mongodb@cluster0.4womdxl.mongodb.net/mydb",
-  "redisHost": "localhost",
+  "redisHost": "127.0.0.1",
   "redisPort": 6379,
   "sessionSecret": "some-secret-hash",
   "port": 3000,

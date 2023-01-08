@@ -49,25 +49,38 @@
             });
         });
     </script>
+    <style>
+        .button1
+        {
+            color: black; 
+        }
+        a:link, a:visited {
+            background-color: none;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
+    
+    
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">
-                <p>Login and Signup System</p>
+                <p><b>Login and Signup System</b></p>
             </a>
         </div>
         <div class="container">
-            <p class="navbar-text navbar-right">Please sign in</a></p>
+            <p class="navbar-text navbar-right"><a href="" id="#"><b> Sign in</b></a></p>
         </div>
     </nav>
     <div class="form-group" style="margin-top: 100px; width : 400px; margin-left : 50px;">
         <input type="text" id="username" placeholder="Name" class="form-control"><br>
         <input type="text" id="useremail" placeholder="Email" class="form-control"><br>
         <input type="password" id="password" placeholder="Password" class="form-control"><br>
-        <input type="button" id="login-submit" value="Log In" class="btn btn-primary">&nbsp;<a href="" id="reg">Sign up
-            here </a>
+       <!--   <input type="button" id="login-submit" value="Log In" class="btn btn-primary">&nbsp;<a href="" id="reg">Sign up here </a> -->
+        <button type="button1" class="btn btn-primary btn-block mb-4 button1"><b>Log in</b></button>&nbsp;
+        <button type="button" class="btn btn-primary btn-block mb-4"><a href="" id="reg" ><b> Sign up here </b></a></button>
     </div>
 </body>
 

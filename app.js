@@ -1,13 +1,14 @@
 const express = require("express");
 const session = require("express-session");
 const redis = require("redis");
-const redisStore = require("connect-redis")(session);
+//const redisStore = require("connect-redis")(session);
 const nconf = require("nconf");
 const bodyParser = require("body-parser");
 const chalk = require("chalk");
 const path = require("path");
 const app = express();
-
+//const session = require("express-session")
+let redisStore = require("connect-redis")(session)
 // load config file
 nconf
   .argv()
@@ -17,13 +18,15 @@ nconf
   });
 
 // connect to redis session store
+
 const redisSessionStore = redis.createClient(
   nconf.get("redisPort"),
   nconf.get("redisHost"),
   {
     db: 0,
   }
-);
+)
+// redisSessionStore.connect().catch(console.error);
 
 redisSessionStore.on("connect", () => {
   console.log(
@@ -33,6 +36,7 @@ redisSessionStore.on("connect", () => {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 
 // session store
 app.use(
@@ -44,6 +48,7 @@ app.use(
     store: new redisStore({ client: redisSessionStore }),
     resave: false,
     saveUninitialized: false,
+    
   })
 );
 
@@ -58,3 +63,5 @@ app.use("/users", require("./routes/users"));
 // start the app
 app.listen(nconf.get("port") || 3000);
 console.log("App Started...");
+
+

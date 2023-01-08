@@ -11,7 +11,7 @@ router.post("/login", async (req, res) => {
     });
     const result = schema.validate(req.body);
     if (result.error) {
-      throw result.error.details[0].message;
+      throw result.error.details[0]?.message;
     }
     let checkUserLogin = await models.verifyUser(result.value);
     if (checkUserLogin.error) {
